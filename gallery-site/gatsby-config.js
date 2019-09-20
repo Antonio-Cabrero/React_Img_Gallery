@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Image Gallery`,
     description: `This will be an awesome displayed image gallery fed by an awesome API`,
+    author: `Antonio Cabrero`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
