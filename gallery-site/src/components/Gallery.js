@@ -1,26 +1,36 @@
-import React from "react"
+import React, {Component} from "react"
 import GalleryItem from "./GalleryItem.js"
 import css from "../styles/gallery.module.css"
 
+class Gallery extends Component {
 
-let arrOb = {}
-
-    fetch("https://pixabay.com/api/?key=13689151-3e9314f1cf76c7d3c04ffec4e&q=yellow+cars&image_type=photo")
-    .then(res => res.json())
-    .then(data => arrOb.images = data.hits)
-
-const Gallery = () => {
-
-   const galleryItems = 
-        arrOb.images.map(img => 
-            (<GalleryItem src={img.largeImageURL} width={img.imageWidth} height={img.imageHeight}/> )
+   constructor() {
+       super()
+       this.state = {
+           pictures: [],
+       }
+   }
+   componentDidMount() {
+    fetch("https://pixabay.com/api/?key=13689151-3e9314f1cf76c7d3c04ffec4e&q=norway&image_type=photo&per_page=50")
+    .then(res => {
+        return res.json()
+    }).then(data => {
+        let pictures = data.hits.map((img) => {
+            return (
+                <GalleryItem src={img.largeImageURL} width={img.imageWidth} height={img.imageHeight}/>
             )
+        })
+        this.setState({pictures: pictures})
+    })
+}
 
+
+   render() {
     return (
-        <div className={css.Gallery__container}>
-            {galleryItems}
+        <div className={css.Gallery__container}> 
+            {this.state.pictures}
         </div>
-    )
+    )}
 }
 
 export default Gallery
