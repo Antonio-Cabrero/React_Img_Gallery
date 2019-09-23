@@ -6,10 +6,10 @@ const GalleryItem = ({src, alt, width, height}) => {
 
     const imgOrientation = () => {
 
-       if (width < height) {
-           return css.Portrait
-    } else if (width > height) {   
-           return css.Landscape }
+       if (width/height >= 1.1) {
+           return css.Landscape
+    } else if (height/width >= 1.1) {   
+           return css.Portrait }
         return css.Square
     }
     

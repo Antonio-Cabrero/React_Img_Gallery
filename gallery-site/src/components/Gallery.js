@@ -11,7 +11,7 @@ class Gallery extends Component {
        }
    }
    componentDidMount() {
-    fetch("https://pixabay.com/api/?key=13689151-3e9314f1cf76c7d3c04ffec4e&q=norway&image_type=photo&per_page=50")
+    fetch("https://pixabay.com/api/?key=13689151-3e9314f1cf76c7d3c04ffec4e&q=people&image_type=photo&per_page=50")
     .then(res => {
         return res.json()
     }).then(data => {

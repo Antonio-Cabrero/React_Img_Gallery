@@ -25,10 +25,9 @@
   
   .Gallery__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: min-content;
+    grid-template-columns: repeat(auto-fit, minmax(14%, 1fr));
     grid-auto-flow: dense;
-    grid-gap: 3px;
+    grid-gap: 6px;
   }
   
   .Gallery__container > .Gallery__item {
@@ -43,29 +42,21 @@
   }
 
   .Square {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-
-  .SquareBig {
     grid-column: span 2;
     grid-row: span 2;
   }
   
   .Portrait {
-    grid-row: span 2;
-  }
-
-  .PortraitBig {
     grid-row: span 3;
     grid-column: span 2;
   }
-  
-  .Landscape {
-    grid-column: span 2;
-  }
 
-  .LandscapeBig {
+  .Landscape {
     grid-column: span 3;
     grid-row: span 2;
+  }
+
+  .Emphasis {
+    grid-column: 6;
+    grid-row: 4;
   }
