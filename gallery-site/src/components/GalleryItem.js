@@ -2,7 +2,7 @@ import React from "react"
 import css from "../styles/gallery.module.css"
 
 
-const GalleryItem = ({src, alt, width, height}) => {
+const GalleryItem = ({src, alt, width, height, key={key}}) => {
 
     const imgOrientation = () => {
 
@@ -15,7 +15,7 @@ const GalleryItem = ({src, alt, width, height}) => {
     
 
     return (
-        <div className={imgOrientation()}>
+        <div className={imgOrientation()} key={key}>
             <img className={css.Gallery__img} src={src} alt={alt}></img>
         </div>
     )

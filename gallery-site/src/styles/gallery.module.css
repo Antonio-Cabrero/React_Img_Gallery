@@ -25,7 +25,7 @@
   
   .Gallery__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-auto-flow: dense;
     grid-gap: 6px;
   }
@@ -37,8 +37,10 @@
   
   .Gallery__img {
     background-color: #ffffff;
-    width: inherit;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    align-self: center;
   }
 
   .Square {
